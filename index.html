@@ -13,6 +13,7 @@
         <input type="number" id="Grade">
         <input type="submit" value="Check">
     </form>
+    <p class="Error Message"></p>
 
     <p id="result"></p>
 
@@ -20,9 +21,14 @@
      function conditionCheck() {
         let Grade = +document.querySelector("#Grade").value;
 
-        if (Grade > 79) {
+        if (Grade >100){
+            document.querySelector("#result").innerHTML = "You Can't Go Over 100%";
+            return;
+            }
+        else if (Grade > 79) {
             document.querySelector("#result").innerHTML = "A ONE Grade";
         }
+        
         else if (Grade > 70) {
             document.querySelector("#result").innerHTML = "A Grade";
         }
@@ -35,9 +41,14 @@
         else if (Grade > 45) {
             document.querySelector("#result").innerHTML = "D Grade";
         }
-        if (Grade < 45){
+        else if (Grade < 45){
             document.querySelector("#result").innerHTML = "Fail";
         }
+        if (Grade < 1){
+            document.querySelector("#result").innerHTML = "You Can't Go Less 0%";
+            return;
+        }
+
      }
 
     </script>
